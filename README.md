@@ -3,4 +3,4 @@ This script is an implemention of a naive centralized and/or bilevel generation 
 
 A [GAMS source code](https://github.com/datejada/SIGASUS) is available by the Diego A. Tejada-Arango. This is just a transformation of GAMS code into a MATLAB one
 
-Requirement: installing of modeling language [YALMIP](https://yalmip.github.io/) and a MIP solver such as [Gurobi](https://www.gurobi.com/)
+Requirement: installing of the modeling language [YALMIP](https://yalmip.github.io/) and a MIP solver such as [Gurobi](https://www.gurobi.com/)
