@@ -158,8 +158,8 @@ constB = [constB, ( repmat(v_s, 1, nt) .* GAMMAUB_MIN <= gammaUB - gammaUB_aux <
 constB = [constB, ( (1 - repmat(v_s, 1, nt)) .* GAMMAUB_MIN <= gammaUB_aux <= (1 - repmat(v_s, 1, nt)) .* GAMMAUB_MAX ): 'Linearized complementarity lower and upper bound (5g)'];
 constB = [constB, ( repmat(v_s, 1, nt) .* MUUB_MIN <= muUB - muUB_aux <= repmat(v_s, 1, nt) .* MUUB_MAX ):               'Linearized complementarity lower and upper bound (5h)'];
 constB = [constB, ( (1 - repmat(v_s, 1, nt)) .* MUUB_MIN <= muUB_aux <= (1 - repmat(v_s, 1, nt)) .* MUUB_MAX ):          'Linearized complementarity lower and upper bound (5i)'];
-opts = sdpsettings('solver', 'Gurobi', 'verbose', 0);
-diag = optimize(constB, -objB, opts);
+opts   = sdpsettings('solver', 'Gurobi', 'verbose', 0);
+diag   = optimize(constB, -objB, opts);
 
 % Check validity of Upper bound of Dual variables
 betaUB_max_cort  = all(value(betaUB) < BETAUB_MAX, 'all');
